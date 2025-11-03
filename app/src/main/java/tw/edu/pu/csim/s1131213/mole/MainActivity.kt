@@ -62,15 +62,16 @@ fun MoleScreen(moleViewModel: MoleViewModel = viewModel()) {
                 moleViewModel.getArea(intSize, moleSizePx) },
         Alignment.Center
     ) {
-        Text("分數: $counter \n時間: $stay")
+        Text("打地鼠遊戲(林哲旭)\n分數: $counter \n時間: $stay")
     }
 
     Image(
         painter = painterResource(id = R.drawable.mole),
         contentDescription = "地鼠",
         modifier = Modifier
-            .offset { IntOffset(moleViewModel.offsetX, moleViewModel.offsetY)}
+            .offset { IntOffset(moleViewModel.offsetX, moleViewModel.offsetY) }
             .size(moleSizeDp)
+
             .clickable {moleViewModel.incrementCounter()}
     )
 }
